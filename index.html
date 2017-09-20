@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的主页</title>
+    <link rel="stylesheet" href="lib/bootstrap.min.css">
+    <script src="lib/jquery-3.2.1.min.js"></script>
+    <script src="lib/bootstrap.min.js"></script>
+</head>
+<style>
+    .mcontent{
+        padding-top: 50px;
+    }
+    .sidebar{
+        width: 200px;
+        height:100%;
+        padding-top: 12px;
+        /*padding-left: 12px;*/
+        /*padding-right: 12px;*/
+        background: #eeeeee;
+    }
+    html,body{
+        height: 100%;
+    }
+    .mcontent{
+        height: 100%;
+    }
+</style>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container " >
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+            </button>
+            <a class="navbar-brand" href="#">朕的皇宫</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse" >
+            <ul class="nav navbar-nav nav-pills" id="mytabs">
+                <li class="active"><a href="#about">上朝</a></li>
+                <li><a href="#about">批阅奏折</a></li>
+                <li><a href="#contact">发布圣旨</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="">出宫</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="mcontent">
+    <div class="sidebar">
+        <ul class="nav nav-pills  nav-stacked" role="tablist" >
+            <li class="active"><a href="">上书房</a></li>
+            <li class=""><a href="">御花园</a></li>
+            <li class=""><a href="">后宫</a></li>
+        </ul>
+    </div>
+    <div class="col-xs-9 ">
+
+    </div>
+</div>
+
+
+</body>
+</html>
+<script>
+    $('#myAffix').affix({
+        offset: {
+            top: 100,
+            bottom: function () {
+                return (this.bottom = $('.footer').outerHeight(true))
+            }
+        }
+    })
+    $(".nav-pills a").click(function (e) {
+        e.preventDefault();
+        $(this).tab("show");
+    })
+</script>
+
+
+
+
+
